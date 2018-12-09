@@ -10,10 +10,11 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>hdfs-starter</module>
+        <module>mr-starter</module>
     </modules>
 
     <properties>
-        <hadoop.version>2.8.4</hadoop.version>
+        <hadoop.version>2.8.5</hadoop.version>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-hdfs -->
@@ -36,11 +37,30 @@
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-mapreduce-client-core</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-hdfs-httpfs -->
         <dependency>
             <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-hdfs-httpfs</artifactId>
+            <artifactId>hadoop-mapreduce-client-core</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-mapreduce-client-jobclient -->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-mapreduce-client-jobclient</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-mapreduce-client-shuffle -->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-mapreduce-client-shuffle</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-mapreduce-client-common -->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-mapreduce-client-common</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-hdfs-httpfs -->
+       <!-- <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-hdfs-httpfs</artifactId>
+        </dependency>-->
 
     </dependencies>
     <dependencyManagement>
@@ -69,12 +89,31 @@
                <artifactId>hadoop-mapreduce-client-core</artifactId>
                <version>${hadoop.version}</version>
            </dependency>
-           <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-hdfs-httpfs -->
+           <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-mapreduce-client-jobclient -->
            <dependency>
+               <groupId>org.apache.hadoop</groupId>
+               <artifactId>hadoop-mapreduce-client-jobclient</artifactId>
+               <version>${hadoop.version}</version>
+           </dependency>
+           <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-mapreduce-client-shuffle -->
+           <dependency>
+               <groupId>org.apache.hadoop</groupId>
+               <artifactId>hadoop-mapreduce-client-shuffle</artifactId>
+               <version>${hadoop.version}</version>
+           </dependency>
+           <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-mapreduce-client-common -->
+           <dependency>
+               <groupId>org.apache.hadoop</groupId>
+               <artifactId>hadoop-mapreduce-client-common</artifactId>
+               <version>${hadoop.version}</version>
+           </dependency>
+
+           <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-hdfs-httpfs -->
+           <!--<dependency>
                <groupId>org.apache.hadoop</groupId>
                <artifactId>hadoop-hdfs-httpfs</artifactId>
                <version>${hadoop.version}</version>
-           </dependency>
+           </dependency>-->
            <!-- https://mvnrepository.com/artifact/junit/junit -->
            <dependency>
                <groupId>junit</groupId>
